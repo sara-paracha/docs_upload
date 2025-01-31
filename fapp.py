@@ -58,7 +58,8 @@ with tab1:
             msg.attach(part2)
 
             # SMTP server settings for Outlook
-            smtp_server = 'smtp.office365.com'
+            # smtp_server = 'smtp.office365.com'
+            smtp_server = st.secrets["email"]["smtp_server"]
             smtp_port = 587
 
             try:
@@ -82,8 +83,10 @@ with tab1:
                 server.quit()
 
         # Example usage
-        sender_email = 'palwashap@palwp.onmicrosoft.com'
-        sender_password = 'Pokemon45678930'
+        # sender_email = 'palwashap@palwp.onmicrosoft.com'
+        # sender_password = 'Pokemon45678930'
+        sender_email = st.secrets["email"]["sender_email"]
+        sender_password = st.secrets["email"]["sender_password"]
         recipient_email = 'sara.paracha@outlook.com'
         subject = f"{truck_number}_{driver_name}"
         message = 'This is an HTML email sent using smtplib and Outlook.'
